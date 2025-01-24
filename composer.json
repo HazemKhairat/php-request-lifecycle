@@ -1,0 +1,42 @@
+{
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://repo.packagist.org",
+      "options": {
+        "ssl": {
+          "verify_peer": false,
+          "allow_self_signed": true,
+          "cafile": "PATH_TO_YOUR_CAFILE (ex. D:/curl-ca-bundle.crt)",
+          "capath": "DIRECTORY_PATH_TO_YOUR_CAFILE"
+        }
+      }
+    }
+  ],
+  "name": "hazem/rlc",
+  "description": "A simple PHP project",
+  "type": "project",
+  "require": {
+    "php": "^8.0",
+    "symfony/http-foundation": "^5.3",
+    "symfony/var-dumper": "^5.3",
+    "nikic/fast-route": "^1.3",
+    "league/container": "^4.2",
+    "doctrine/dbal": "*",
+    "vlucas/phpdotenv": "^5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "RLC\\Framework\\": "framework/",
+      "App\\": "src/"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "php -r \"echo 'Autoload complete!';\""
+    ]
+  },
+  "config": {
+    "optimize-autoloader": true
+  }
+}
